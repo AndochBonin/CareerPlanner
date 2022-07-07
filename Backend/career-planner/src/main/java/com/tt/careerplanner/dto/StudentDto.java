@@ -11,17 +11,17 @@ public class StudentDto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long student_id;
+    private long studentId;
 
     @Column(length = 255)
-    private String first_name;
+    private String firstName;
 
     @Column(length = 255)
-    private String last_name;
+    private String lastName;
 
     @Column(length = 40)
-    private String email_address;
+    private String emailAddress;
 
     @Column(length = 40)
-    private String account_password;
+    private String accountPassword;
 }
