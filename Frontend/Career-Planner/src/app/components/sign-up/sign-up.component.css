@@ -58,6 +58,12 @@ button:hover{
   h1{
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #027249;
+  }
+
+  .container{
+    margin-left: 19%;
+    float: left;
   }
   
   
