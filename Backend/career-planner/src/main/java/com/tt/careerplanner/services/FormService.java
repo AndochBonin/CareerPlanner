@@ -5,4 +5,6 @@ import org.springframework.http.ResponseEntity;
 
 public interface FormService {
     public ResponseEntity saveForm(Form form);
+
+    public String getCareerPath();
 }
