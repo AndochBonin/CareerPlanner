@@ -1,7 +1,17 @@
-package com.tt.careerplanner.model;
+package com.tt.careerplanner.dto;
+import lombok.Data;
 
-public class Form {
-    private String response_id;
-    private String response_description;
+import javax.persistence.*;
 
+@Data
+@Entity
+@Table(name="forms")
+public class FormDto {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long responseId;
+
+    @Column(length = 3)
+    private String responseDescription;
 }
