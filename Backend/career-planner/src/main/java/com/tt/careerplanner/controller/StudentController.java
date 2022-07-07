@@ -1,5 +1,6 @@
 package com.tt.careerplanner.controller;
 
+import com.tt.careerplanner.dto.StudentLoginDto;
 import com.tt.careerplanner.model.Student;
 import com.tt.careerplanner.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,4 +22,8 @@ public class StudentController {
         return studentService.signupStudent(student);
     }
 
+    @PostMapping("/login")
+    public ResponseEntity loginStudent(@RequestBody Student student){
+        return studentService.loginStudent(student);
+    }
 }
