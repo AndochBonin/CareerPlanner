@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class StudentServiceImp implements StudentService{
 
@@ -29,4 +31,20 @@ public class StudentServiceImp implements StudentService{
         return new ResponseEntity(HttpStatus.ACCEPTED);
     }
 
+    @Override
+    public ResponseEntity loginStudent(Student student) {
+
+        //BeanUtils.copyProperties(studentLoginDto,studentDto);
+
+        Optional<StudentDto> retrievedStudentDto = studentRepository.findByEmailAddress(student.getEmail_address());
+
+        if(retrievedStudentDto.isPresent()){
+            if(retrievedStudentDto.get().getAccount_password().equals(student.getAccount_password())){
+                return new ResponseEntity(HttpStatus.ACCEPTED);
+            }
+            return new ResponseEntity(HttpStatus.ALREADY_REPORTED);
+        }
+
+        return new ResponseEntity(HttpStatus.BAD_REQUEST);
+    }
 }

@@ -5,4 +5,7 @@ import org.springframework.http.ResponseEntity;
 public interface StudentService {
 
     ResponseEntity signupStudent(Student student);
+    ResponseEntity loginStudent(Student student);
+
+
 }
